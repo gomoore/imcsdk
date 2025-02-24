@@ -132,10 +132,10 @@ def _vd_span_depth_get(drive_list):
 
 def _raid_max_size_get(raid_level, total_size, min_size, span_depth):
     size = {0: total_size,
-            1: total_size/2,
+            1: total_size//2,
             5: total_size - (span_depth * 1 * min_size),
             6: total_size - (span_depth * 2 * min_size),
-            10: total_size/2,
+            10: total_size//2,
             50: total_size - (span_depth * 1 * min_size),
             60: total_size - (span_depth * 2 * min_size)}
 

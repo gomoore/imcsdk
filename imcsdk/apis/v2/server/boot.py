@@ -246,7 +246,7 @@ def _add_boot_device(handle, parent_mo_or_dn, boot_device):
 
     device.set_prop_multiple(**device_props)
     if hasattr(device, "state"):
-        device.state = boot_device['state']
+        device.state = "Enabled"
 
     # applies for legacy boot order only
     if type(parent_mo_or_dn) is str:
