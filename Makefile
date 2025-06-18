@@ -44,6 +44,7 @@ clean-test:
 	rm -fr .tox/
 	rm -f .coverage
 	rm -fr htmlcov/
+	rm -fr .pytest_cache/
 
 lint:
 	flake8 imcsdk tests
@@ -52,7 +53,8 @@ test:
 	pytest tests/unit_tests
 
 coverage:
-	coverage run --source imcsdk setup.py test
+	# coverage run --source imcsdk setup.py test
+	coverage run -m unittest
 	coverage report -m
 	coverage html
 	$(BROWSER) htmlcov/index.html
